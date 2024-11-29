@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <title>Book Store</title>
+    <style>
+        .navbar-nav {
+            flex: 1;
+            justify-content: center;
+        }
+        .banner {
+            position: relative;
+            background: url('/images/banner.png') no-repeat center center;
+            background-size: cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+            z-index: 1;
+        }
+        .banner .content {
+            position: relative;
+            z-index: 2;
+        }
+        .text-cont h6{
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .social-icons a {
+            margin: 0 10px;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .banner p {
+                width: 90%;
+                margin: auto;
+            }
+            .banner .content{
+                display:block
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white lg" href="/">LIB⁐SRORE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="available_books">Available Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="my_books">My Books <i class="bi bi-6-square-fill"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="libraryview">Libraries</a></li>
+            </ul>
+            <div>
+                <a class="nav-link text-white" href="book_register"><i class="bi bi-journal-plus text-white"></i> New Book Register</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="banner">
+    <div class="content">
+        <h1 class="txt-xl">WELCOME TO OUR BOOK STORE</h1>
+        <p class="w-50 text-center m-auto">This well, in reality all the professions dealing with the universe of communication have a stable relationship with these words. Lorem ipsum dolor sit amet. The graphic and typographic operators know this well, in reality all the professions dealing.</p>
+        <p><button class="btn btn-primary btn-lg mt-4"><a class="nav-link text-white" href="available_books">Available Books</a></button></p>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row my-5 d-flex flex-wrap">
+        <div class="col-md-6 mb-4 mb-md-0">
+            <img src="/images/reading.png" class="img-fluid" alt="Book 1">
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h6 class="p-5 my-2">
+                Several years ago, I was given as a gift a help people deal with the daily emotional challenges of existence. I have to admit that at first I didn’t really like the idea of being given a reading “prescription.” I’ve generally preferred to mimic Virginia Woolf’s passionate commitment to serendipity in my personal reading discoveries, delighting not only in the books themselves but in the randomly meaningful nature of how I came upon them (on the bus after a breakup, in a backpackers’ hostel in Damascus, or in the dark library stacks at graduate school, while browsing instead of studying). I’ve long been wary of the peculiar evangelism of certain readers: You must read this, they say, thrusting a book into your hands with a beatific gleam in their eyes, with no allowance for the fact that books mean different things to people—or different things to the same person—at various points in our lives. I loved John Updike’s stories about the Maples in my twenties, for example, and hate them in my thirties, and I’m not even exactly sure why. But the session was a gift, and I found myself unexpectedly enjoying the initial questionnaire about my reading habits that the bibliotherapist, Ella Berthoud, sent me. Nobody had ever asked me these questions before, even though reading fiction is and always has been essential to my life. I love to gorge on books over long breaks—I’ll pack more books than clothes, I told Berthoud. I confided my dirty little secret, which is that I don’t like buying or owning books, and always prefer to get them from the library (which, as I am a writer, does not bring me very good book-sales karma). In response to the question “What is preoccupying you at the moment?,” I was surprised by what I wanted to confess: I am worried about having no spiritual resources to shore myself up against the inevitable future grief of losing somebody I love, I wrote. I’m not religious, and I don’t particularly want to be, but I’d like to read more about other people’s reflections on coming to some sort of early, weird form of faith in a “higher being” as an emotional survival tactic. Simply answering the questions made me feel better, lighter.
+            </h6>
+        </div>
+    </div>
+
+    <h1 class="text-center">OUR FACILITY</h1>
+    <div class="row mt-4">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/images/library.png" class="card-img-top" alt="Library">
+                <div class="card-body">
+                    <h5 class="card-title">Library</h5>
+                    <p class="card-text">A place to find a wide range of books and resources.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/images/cafeteria.png" class="card-img-top" alt="Cafeteria">
+                <div class="card-body">
+                    <h5 class="card-title">Cafeteria</h5>
+                    <p class="card-text">Enjoy a variety of snacks and beverages while reading.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/images/library.png" class="card-img-top" alt="Study Area">
+                <div class="card-body">
+                    <h5 class="card-title">Study Area</h5>
+                    <p class="card-text">A quiet place to focus and study.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body card-text-container text_cont">
+                <div class="">
+                    <h6>
+                        Several years ago, I was given as a gift a remote session with a bibliotherapist at the London headquarters of the School of Life, y like the idea of being given a reading “prescription.” I’ve generally preferred to mimic Virginia Woolf’s passionate commitment to serendipity in my personal reading discoveries, delighting not only in the books themselves but in the randomly meaningful nature of how I came upon them (on the bus after a breakup, in a backpackers’ hostel in Damascus, or in the dark library stacks at graduate school, while browsing instead of studying). I’ve long been wary of the peculiar evangelism of certain readers: You must read this, they say, thrusting a book into your hands with a beatific gleam in their eyes, with no allowance for the fact that books mean different things to people—or different things to the same person—at various points in our lives. I loved John Updike’s stories about the Maples in my twenties, for example, and hate them in my thirties, and I’m not even exactly sure why. But the session was a gift, and I found myself unexpectedly enjoying the initial questionnaire about my reading habits that the bibliotherapist, Ella Berthoud, sent me. Nobody had ever asked me these questions before, even though reading fiction is and always has been essential to my life. I love to gorge on books over long breaks—I’ll pack more books than clothes, I told Berthoud. I confided my dirty little secret, which is that I don’t like buying or owning books, and always prefer to get them from the library (which, as I am a writer, does not bring me very good book-sales karma). In response to the question “What is preoccupying you at the moment?,” I was surprised by what I wanted to confess: I am worried about having no spiritual resources to shore myself up against the inevitable future grief of losing somebody I love, I wrote. I’m not religious, and I don’t particularly want to be, but I’d like to read more about other people’s reflections on coming to some sort of early, weird form of faith in a “higher being” as an emotional survival tactic. Simply answering the questions made me feel better, lighter.
+                    </h6>
+                </div>
+                <div class="text-end">
+                    <a href="libraryview" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<footer class="footer">
+    <div class="container text-center">
+        <p>Contact us at:</p>
+        <p>
+            <i class="fas fa-envelope"></i> email@example.com <br>
+            <i class="fas fa-phone"></i> +123 456 7890
+        </p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="mt-3">&copy; 2024 Book Store. All rights reserved.</p>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
